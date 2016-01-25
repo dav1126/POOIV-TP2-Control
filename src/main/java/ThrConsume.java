@@ -7,7 +7,7 @@
  * @author 0345162
  *
  */
-public class ThrConsumme extends Thread
+public class ThrConsume extends Thread
 {
 	/**
 	 * The quantity of resource consumed
@@ -30,7 +30,7 @@ public class ThrConsumme extends Thread
 	 * @param reserve
 	 * @param delay
 	 */
-	public ThrConsumme(int qty, Reserve reserve, int delay)
+	public ThrConsume(int qty, Reserve reserve, int delay)
 	{
 		this.qty = qty;
 		this.reserve = reserve;
@@ -45,15 +45,15 @@ public class ThrConsumme extends Thread
 	public void run()
 	{
 		this.reserve.consume(this.qty);
-		try
-		{
-			Thread.sleep(this.delay);
-		} catch (InterruptedException e)
-		{
-			System.out.println
-				("Thread sleep error: Consumption thread is interrupted");
-			e.printStackTrace();
-		}
+//		try
+//		{
+//			Thread.sleep(this.delay);
+//		} catch (InterruptedException e)
+//		{
+//			System.out.println
+//				("Thread sleep error: Consumption thread is interrupted");
+//			e.printStackTrace();
+//		}
 	}
 
 	/**

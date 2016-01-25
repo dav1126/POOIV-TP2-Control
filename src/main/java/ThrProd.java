@@ -1,3 +1,6 @@
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+
 
 /**
  * Class used to create the production of a reserve's resource
@@ -5,7 +8,6 @@
  */
 public class ThrProd extends Thread
 {
-
 	/**
 	 * The quantity of resource produced
 	 */
@@ -43,15 +45,15 @@ public class ThrProd extends Thread
 	{
 		this.reserve.consume(this.qty);
 		//System.out.println(getReserve().getStock());
-		try
-		{
-			Thread.sleep(this.delay);
-		} catch (InterruptedException e)
-		{
-			System.out.println
-				("Thread sleep error: Consumption thread is interrupted");
-			e.printStackTrace();
-		}
+//		try
+//		{
+//			Thread.sleep(this.delay);
+//		} catch (InterruptedException e)
+//		{
+//			System.out.println
+//				("Thread sleep error: Consumption thread is interrupted");
+//			e.printStackTrace();
+//		}
 	}
 	
 	/**
