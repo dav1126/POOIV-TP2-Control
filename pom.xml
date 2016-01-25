@@ -17,4 +17,16 @@
   <groupId>456_DSP</groupId>
   <artifactId>TP2_Control_StPierreDavid</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>456_DSP</groupId>
+  		<artifactId>TP2_Model_StPierreDavid</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>456_DSP</groupId>
+  		<artifactId>TP2_View_StPierreDavid</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
