@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>TP2_Model</name>
+=======
+	<name>TP2_Control</name>
+>>>>>>> branch 'master' of https://github.com/dav1126/POOIV-TP2-Control.git
 	<comment></comment>
 	<projects>
 	</projects>
