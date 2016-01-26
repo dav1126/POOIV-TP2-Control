@@ -48,6 +48,17 @@ public class CellFactory
 	 */
 	private SimpleIntegerProperty stockProperty;
 
+	/**
+	 * Constructeur de CellFactory
+	 * @param numProperty
+	 * @param threadLabelProperty
+	 * @param deltaProperty
+	 * @param nbreRuptureDeStockProperty
+	 * @param qteRuptureDeStockProperty
+	 * @param penaltyProperty
+	 * @param qteMoyenneProperty
+	 * @param stockProperty
+	 */
 	public CellFactory(SimpleIntegerProperty numProperty,
 			SimpleStringProperty threadLabelProperty,
 			SimpleIntegerProperty deltaProperty,

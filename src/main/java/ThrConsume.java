@@ -1,9 +1,6 @@
 
 /**
  * Class used to create the consumption of a reserve's resource
- *
- */
-/**
  * @author 0345162
  *
  */
@@ -45,15 +42,6 @@ public class ThrConsume extends Thread
 	public void run()
 	{
 		this.reserve.consume(this.qty);
-//		try
-//		{
-//			Thread.sleep(this.delay);
-//		} catch (InterruptedException e)
-//		{
-//			System.out.println
-//				("Thread sleep error: Consumption thread is interrupted");
-//			e.printStackTrace();
-//		}
 	}
 
 	/**

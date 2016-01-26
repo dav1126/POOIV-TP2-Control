@@ -6,11 +6,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * Class used to manage the stock of the program
- * 
+ * Class used to manage the stock of the program.
+ * Observable to notify the controller when new results are generated.
  */
-public class Reserve
+public class Reserve extends Observable
 {
+	/**
+	 * Object permettant de gérer la sauvegarde dans la BD
+	 */
+	gestionBD gestionBD = new gestionBD();
+	
 	/**
 	 * Observable list qui conserve l'historique des transaction dans des 
 	 * objet de type CellFactory
@@ -110,15 +115,20 @@ public class Reserve
 		//On conserve les infos de cette transaction dans un CellFactory
 		CellFactory cf = new CellFactory(new SimpleIntegerProperty(this.num),
 										 new SimpleStringProperty("T1"),
-										 new SimpleIntegerProperty(qty),
-										 new SimpleIntegerProperty(this.stock),
+										 new SimpleIntegerProperty(-qty),
 										 new SimpleIntegerProperty(this.nbreRuptureDeStock),
 										 new SimpleIntegerProperty(this.qteRuptureDeStock),
 										 new SimpleIntegerProperty(this.penaltyCumulee),
-										 new SimpleIntegerProperty(qteMoyenne));
+										 new SimpleIntegerProperty(qteMoyenne),
+										 new SimpleIntegerProperty(this.stock));
 		
 		//Ajouter le cellFactory a la liste observable
 		transactionList.add(0, cf);
+		setChanged();
+		notifyObservers();
+		
+		//Sauvegarder dans la BD
+		gestionBD.sauvegardeDansLaBd(cf);
 	}
 	
 	/**
@@ -137,18 +147,27 @@ public class Reserve
 		
 		//On conserve les infos de cette transaction dans un CellFactory
 		CellFactory cf = new CellFactory(new SimpleIntegerProperty(this.num),
-										 new SimpleStringProperty("T1"),
+										 new SimpleStringProperty("T2"),
 										 new SimpleIntegerProperty(qty),
-										 new SimpleIntegerProperty(this.stock),
 										 new SimpleIntegerProperty(this.nbreRuptureDeStock),
 										 new SimpleIntegerProperty(this.qteRuptureDeStock),
 										 new SimpleIntegerProperty(this.penaltyCumulee),
-										 new SimpleIntegerProperty(qteMoyenne));
+										 new SimpleIntegerProperty(qteMoyenne),
+										 new SimpleIntegerProperty(this.stock));
 		
 		//Ajouter le cellFactory a la liste observable
 		transactionList.add(0, cf);
+		setChanged();
+		notifyObservers();
+		
+		//Sauvegarder dans la BD
+		gestionBD.sauvegardeDansLaBd(cf);
 	}
 	
+	/**
+	 * Retourne l'observableList de CellFactory
+	 * @return
+	 */
 	public ObservableList<CellFactory> getTransactionList()
 	{
 		return transactionList;

@@ -43,17 +43,7 @@ public class ThrProd extends Thread
 	@Override
 	public void run()
 	{
-		this.reserve.consume(this.qty);
-		//System.out.println(getReserve().getStock());
-//		try
-//		{
-//			Thread.sleep(this.delay);
-//		} catch (InterruptedException e)
-//		{
-//			System.out.println
-//				("Thread sleep error: Consumption thread is interrupted");
-//			e.printStackTrace();
-//		}
+		this.reserve.produce(this.qty);
 	}
 	
 	/**
