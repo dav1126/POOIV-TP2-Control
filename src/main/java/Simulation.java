@@ -7,14 +7,17 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-
+/**
+ * Démarre l'application d'optimisation
+ * @author 0345162
+ *
+ */
 public class Simulation extends Application
 {
 
 	public static void main(String[] args)
 	{
 		Application.launch();
-
 	}
 
 	@Override
